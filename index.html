@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>GPA Calculator</title>
+<link rel="stylesheet" href="styles.css">
+<!--Favicon Implementation--> 
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="manifest" href="/site.webmanifest"> 
+ <!--End of Favicon Implementation-->
+ <!--Lordicon implementation-->
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>GPA CALCULATOR</h1>
+<center>   <lord-icon
+    src="https://cdn.lordicon.com/rguiapej.json"
+    trigger="loop"
+    delay="2000"
+    style="width:100px;height:100px">
+</lord-icon>
+</center>
+    <table id="gradeTable">
+        <tr>
+            <th>Course</th>
+            <th>Credit Unit (CU)</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <td><input type="text" class="course" placeholder="Enter Your Course here..."></td>
+            <td><input type="number" class="credit-unit" placeholder="Enter your Credit Unit here"></td>
+            <td><input type="text" class="grade" placeholder="Enter Your Grade here"></td>
+        </tr>
+    </table>
+    <button id="addRow">Add Row</button>
+    <button id="calculate">Calculate GPA</button>
+    <div id="result"></div>
+    <div id="error-popup" class="error-popup">
+        <div id="error-popup-content" class="error-popup-content">
+            <span id="error-popup-close" class="error-popup-close">&times;</span>
+            <h2>Error</h2>
+            <p id="error-popup-text"></p>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="developer-info">
+    <img src="developer.jpg" alt="Developer">
+    <div>
+        <h3>Developer Info</h3>
+        <p>Name: Innocent Goodness</p>
+        <p>Email: Innocentgoodness009@gmail.com</p>
+        <p>School:Nasarawa State University</p>
+        <p>Department: Computer Science</p>
+            <div class="myportfolio"> <h1>My Porfolio</h1>
+
+            </div>
+        </a>
+    </div>
+</div> -->
+
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

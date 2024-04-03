@@ -1,0 +1,15 @@
+{
+  "name": "gpa_calculator",
+  "version": "1.0.0",
+  "description": "A GPA ()\u001b[D\u001b[D\u001b[CGrade Point Average )\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[calculator that helps Students of NSUK()\u001b[DNasarawa State University Calculate their GPA)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Innocent Goodness :\"\"\u001b[D\u001b[\u001b[C\u001b[CGRIDVEM\"",
+  "license": "ISC",
+  "dependencies": {
+    "@lordicon/element": "^1.6.0",
+    "lottie-web": "^5.12.2"
+  }
+}

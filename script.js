@@ -56,18 +56,20 @@ document.getElementById('calculate').addEventListener('click', function() {
 
         switch (grade) {
             case 'A':
-                gradePoint = 4;
+                gradePoint = 5;
                 break;
             case 'B':
-                gradePoint = 3;
+                gradePoint = 4;
                 break;
             case 'C':
-                gradePoint = 2;
+                gradePoint = 3;
                 break;
             case 'D':
-                gradePoint = 1;
+                gradePoint = 2;
                 break;
             case 'E':
+                gradePoint = 1;
+                break;
             case 'F':
                 gradePoint = 0;
                 break;

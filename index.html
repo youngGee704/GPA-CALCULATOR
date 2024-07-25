@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>GPA Calculator</title>
-<link rel="stylesheet" href="styles.css">
-<!--Favicon Implementation--> 
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
- <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
- <link rel="manifest" href="/site.webmanifest"> 
- <!--End of Favicon Implementation-->
- <!--Lordicon implementation-->
-<script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon Implementation -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- End of Favicon Implementation -->
+    <!-- Lordicon implementation -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
 <body>
 <div class="container">
     <h1>GPA CALCULATOR</h1>
-<center>   <lord-icon
-    src="https://cdn.lordicon.com/rguiapej.json"
-    trigger="loop"
-    delay="2000"
-    style="width:100px;height:100px">
-</lord-icon>
-</center>
+    <center>
+        <lord-icon src="https://cdn.lordicon.com/rguiapej.json" trigger="loop" delay="2000" style="width:100px;height:100px"></lord-icon>
+    </center>
+    <div class="user-name-section">
+        <label for="userName">Enter your name:</label>
+        <input type="text" id="userName" placeholder="Your name">
+    </div>
     <table id="gradeTable">
         <tr>
             <th>Course</th>
             <th>Credit Unit (CU)</th>
             <th>Grade</th>
+            <th>Action</th>
         </tr>
         <tr>
             <td><input type="text" class="course" placeholder="Enter Your Course here..."></td>
-            <td><input type="number" class="credit-unit" placeholder="Enter your Credit Unit here"></td>
-            <td><input type="text" class="grade" placeholder="Enter Your Grade here"></td>
+            <td>
+                <select class="credit-unit">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </td>
+            <td>
+                <select class="grade">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </td>
+            <td><button class="removeRow">Remove</button></td>
         </tr>
     </table>
     <button id="addRow">Add Row</button>
     <button id="calculate">Calculate GPA</button>
+    <button id="clearResult">Clear Result</button>
+    <button id="printResult">Print Result</button>
+    <button id="show-education">View Grade Details</button>
     <div id="result"></div>
     <div id="error-popup" class="error-popup">
         <div id="error-popup-content" class="error-popup-content">
@@ -48,27 +68,45 @@
     </div>
 </div>
 
-
-
 <div class="developer-info">
     <img src="developer.jpg" alt="Developer">
     <div>
         <h3>Developer Info</h3>
         <p>Name: Innocent Goodness</p>
-        <p>Email: Innocentgoodness009@gmail.com</p>
-        <p>School:Nasarawa State University</p>
+        <p>Email: Innocentgoodness009 <br>@gmail.com</p>
+        <p>School: Nasarawa State University</p>
         <p>Department: Computer Science</p>
-            <div class="myportfolio"> <h1>My Porfolio</h1>
-
-            </div>
-        </a>
+        <div class="myportfolio">
+            <h1>My Portfolio</h1>
+        </div>
     </div>
 </div>
 
-
-
-
-
+<!-- Educational Slides Modal -->
+<div id="education-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Understanding Grades</h2>
+        <div class="slide">
+            <h3>Grade Scale</h3>
+            <p>A: 70-100% (5.0 GPA)</p>
+            <p>B: 60-69% (4.0 GPA)</p>
+            <p>C: 50-59% (3.0 GPA)</p>
+            <p>D: 45-49% (2.0 GPA)</p>
+            <p>E: 40-44% (1.0 GPA)</p>
+            <p>F: 0-39% (0.0 GPA)</p>
+        </div>
+        <div class="slide">
+            <h3>GPA Classifications</h3>
+            <p>First Class: 4.50 - 5.00</p>
+            <p>Second Class Upper: 3.50 - 4.49</p>
+            <p>Second Class Lower: 2.40 - 3.49</p>
+            <p>Third Class: 1.50 - 2.39</p>
+            <p>Pass: 1.00 - 1.49</p>
+            <p>Fail: 0.00 - 0.99</p>
+        </div>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>

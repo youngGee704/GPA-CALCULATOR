@@ -104,12 +104,37 @@ document.getElementById('clearResult').addEventListener('click', function() {
 });
 
 document.getElementById('printResult').addEventListener('click', function() {
-    var printContent = document.getElementById('result').innerText;
-    if (printContent) {
+    var resultContent = document.getElementById('result').innerText;
+    var tableRows = document.querySelectorAll('#gradeTable tr:not(:first-child):not(:last-child)');
+    
+    if (resultContent) {
+        // Build the HTML content for printing
+        var tableHTML = '<table border="1" style="width:100%; border-collapse:collapse;">';
+        tableHTML += '<tr><th>Course</th><th>Credit Unit</th><th>Grade</th></tr>';
+        
+        tableRows.forEach(function(row) {
+            var course = row.querySelector('.course').value;
+            var creditUnit = row.querySelector('.credit-unit').value;
+            var grade = row.querySelector('.grade').value;
+            
+            tableHTML += '<tr>';
+            tableHTML += `<td>${course}</td>`;
+            tableHTML += `<td>${creditUnit}</td>`;
+            tableHTML += `<td>${grade}</td>`;
+            tableHTML += '</tr>';
+        });
+        
+        tableHTML += '</table>';
+        tableHTML += '<br>';
+        tableHTML += '<h2>' + resultContent + '</h2>';
+        
+        // Create a new window for printing
         var printWindow = window.open('', '', 'height=600,width=800');
         printWindow.document.write('<html><head><title>Print Result</title>');
+        printWindow.document.write('<style>table {border-collapse: collapse; width: 100%;} th, td {border: 1px solid black; padding: 8px; text-align: left;} th {background-color: #f2f2f2;}</style>');
         printWindow.document.write('</head><body >');
-        printWindow.document.write('<h1>' + printContent + '</h1>');
+        printWindow.document.write('<h1>GPA Calculation Result</h1>');
+        printWindow.document.write(tableHTML);
         printWindow.document.write('</body></html>');
         printWindow.document.close();
         printWindow.print();
